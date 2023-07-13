@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 export const ListPage = styled.main`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-color: #16122A
 `;
 
 export const ListContainer = styled.section`
   width: 50%;
-  height: 90vh;
-  border: 2px solid;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,28 +27,35 @@ export const InsideOfContainer = styled.section`
   justify-content: space-around;
   position: relative;
 
+  h1 {
+    font-size: 2.0rem;
+    color: whitesmoke;
+  }
+
   a {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    color: whitesmoke;
   }
 `;
 
 export const ListOfMovie = styled.div`
   width: 100%;
   height: 90%;
-  border: 2px solid;
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
   align-items: center;
   justify-content: center;
+  gap: 2%;
 
   div {
-    width: 49%;
+    width: 45%;
     height: 50%;
-    border: 2px solid red;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;

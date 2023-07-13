@@ -1,5 +1,5 @@
 import React from 'react'
-import Crud from '../CRUD/Crud'
+import Crud from '../components/CRUD/Crud'
 
 const Home = () => {
   return (

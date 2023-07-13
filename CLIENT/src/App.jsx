@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import List from "./components/Pages/List.jsx";
-import Home from "./components/Pages/Home.jsx";
+import List from "./Pages/List.jsx";
+import Home from "./Pages/Home.jsx";
 import { createContext, useState } from "react";
-import Favorites from "./components/Pages/Favorites.jsx";
+import Favorites from "./Pages/Favorites.jsx";
 import { QueryClient, QueryClientProvider } from "react-query"
 export const FavoriteContext = createContext();
 

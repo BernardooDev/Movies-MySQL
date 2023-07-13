@@ -64,7 +64,7 @@ function List() {
             <div key={d.idmovies}>
               <h1> {d.movieName}</h1>
               <p> {d.movieReview}</p>
-              <p>Note: {d.movieNote}%</p>
+              <p>{d.movieNote}</p>
               <BtnRemove onClick={() => deleteMovie(d.idmovies)}>
                 <AiOutlineClose />
               </BtnRemove>

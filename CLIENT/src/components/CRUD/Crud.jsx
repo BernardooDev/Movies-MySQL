@@ -9,10 +9,11 @@ import {
   BtnCrud,
   ListContainer,
   DivWatched,
+  // Emoji,
 } from "./Style";
 import { NavLink } from "react-router-dom";
 import { BiMoviePlay } from "react-icons/bi";
-import {FaPlay} from "react-icons/fa"
+import { FaPlay } from "react-icons/fa";
 
 function Crud() {
   const [movie, setMovie] = useState("");
@@ -26,13 +27,31 @@ function Crud() {
         movieName: movie,
         movieReview: review,
         movieNote: note,
-        favorites: favorite
+        favorites: favorite,
       }).then(() => {
         alert("Send to the database");
       });
     setMovie("");
     setReview("");
     setNote(0);
+  };
+
+  const Emoji = ({ note }) => {
+    let emoji = "";
+
+    if (note < 20) {
+      emoji = "😢";
+    } else if (note < 40) {
+      emoji = "😐";
+    } else if (note < 60) {
+      emoji = "🙂";
+    } else if (note < 80) {
+      emoji = "😊";
+    } else {
+      emoji = "😄";
+    }
+
+    return <span>{emoji}</span>;
   };
 
   return (
@@ -70,7 +89,7 @@ function Crud() {
             value={note}
             onChange={({ target }) => setNote(target.value)}
           />
-          <p>{note}%</p>
+          <Emoji note={note}></Emoji>
         </DivRange>
         <BtnCrud type="submit" onClick={HandlePost}>
           <BiMoviePlay />
@@ -79,7 +98,10 @@ function Crud() {
       <ListContainer>
         <h1>Lista de filmes</h1>
         <DivWatched>
-        <NavLink to="/list"><FaPlay/>See</NavLink>
+          <NavLink to="/list">
+            <FaPlay />
+            See
+          </NavLink>
         </DivWatched>
       </ListContainer>
     </CrudPage>

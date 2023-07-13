@@ -6,12 +6,12 @@ export const FavoritePage = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #16122A
 `;
 
 export const FavoriteContainer = styled.section`
   width: 50%;
   height: 90%;
-  border: 2px solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,19 +26,25 @@ export const TitleFavorite = styled.div`
   justify-content: space-around;
   text-align: center;
 
+  h1 {
+    color: whitesmoke;
+    font-size: 2rem;
+  }
+
   a {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    color: whitesmoke;
   }
 
 `;
 
 export const FavoriteItem = styled.div`
-    width: 49%;
+    width: 45%;
     height: 50%;
-    border: 2px solid red;
+    border: 1px solid whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,10 +60,10 @@ export const FavoriteItem = styled.div`
 export const ListOfFavorite = styled.div`
   width: 100%;
   height: 90%;
-  border: 2px solid;
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
   align-items: center;
   justify-content: center;
+  gap: 2%;
 `;
