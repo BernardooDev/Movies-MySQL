@@ -40,4 +40,3 @@ Contributions are welcome! If you find any issues or have any suggestions, feel 
 ## License
 This project is licensed under the MIT License.
 
-I apologize for any confusion caused earlier. I hope this properly formats the README as a .md file for the Movies-MySQL project using Node.js. If you have any further questions, feel free to ask!
