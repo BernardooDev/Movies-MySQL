@@ -6,6 +6,8 @@ import {
   ListOfMovie,
   BtnRemove,
   BtnFavorite,
+  TitleOfMovie,
+  ReviewOfMovie,
 } from "./Style";
 import { useQuery } from "react-query";
 import { NavLink } from "react-router-dom";
@@ -20,6 +22,13 @@ import { useState } from "react";
 // import { FavoriteContext } from "../../App";
 
 function List() {
+  const getData = async () => {
+    const response = await axios.get("http://localhost:3010/movies");
+    return response.data;
+  };
+
+  const { data, isLoading, refetch } = useQuery("movies", getData);
+
   const handleFavorite = async (id) => {
     const movie = data.find((d) => d.idmovies === id);
     if (movie.favorites === 0) {
@@ -35,16 +44,27 @@ function List() {
     refetch();
   };
 
-  const getData = async () => {
-    const response = await axios.get("http://localhost:3010/movies");
-    return response.data;
-  };
-
-  const { data, isLoading, refetch } = useQuery("movies", getData);
-
   const deleteMovie = async (id) => {
     const response = await axios.delete(`http://localhost:3010/movies/${id}`);
     refetch();
+  };
+
+  const Emoji = ({ note }) => {
+    let emoji = "";
+
+    if (note < 20) {
+      emoji = "😢";
+    } else if (note < 40) {
+      emoji = "😐";
+    } else if (note < 60) {
+      emoji = "🙂";
+    } else if (note < 80) {
+      emoji = "😊";
+    } else {
+      emoji = "😄";
+    }
+
+    return <span>{emoji}</span>;
   };
 
   return (
@@ -62,9 +82,9 @@ function List() {
         <ListOfMovie>
           {data?.map((d) => (
             <div key={d.idmovies}>
-              <h1> {d.movieName}</h1>
-              <p> {d.movieReview}</p>
-              <p>{d.movieNote}</p>
+              <TitleOfMovie> {d.movieName}</TitleOfMovie>
+              <Emoji note={d.movieNote}></Emoji>
+              <ReviewOfMovie> {d.movieReview}</ReviewOfMovie>
               <BtnRemove onClick={() => deleteMovie(d.idmovies)}>
                 <AiOutlineClose />
               </BtnRemove>

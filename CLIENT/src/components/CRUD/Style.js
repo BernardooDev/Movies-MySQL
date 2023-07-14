@@ -9,24 +9,6 @@ export const CrudPage = styled.main`
   background-color: #16122A;
   position: relative;
   overflow: hidden;
-
-  .OldCamera {
-    width: 20%;
-    height: 35%;
-    position: absolute;
-    bottom: 0%;
-    left: -2%;
-    transform: rotate(330deg);
-  }
-
-  .Glasses {
-    width: 20%;
-    height: 20%;
-    position: absolute;
-    top: 0;
-    right: -2%;
-    transform: rotate(40deg);
-  }
 `;
 
 export const CrudContainer = styled.div`
@@ -66,6 +48,26 @@ export const ListContainer = styled.div`
     height: 20%;
   }
 
+`
+
+export const TitleCrud = styled.div`
+  width: 80%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: whitesmoke;
+    margin-bottom: 1%;
+    position: absolute;
+    left: 90%;
+  }
 `
 
 export const DivName = styled.div`

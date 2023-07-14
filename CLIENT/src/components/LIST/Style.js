@@ -11,7 +11,7 @@ export const ListPage = styled.main`
 `;
 
 export const ListContainer = styled.section`
-  width: 50%;
+  width: 80%;
   height: 90%;
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@ export const ListOfMovie = styled.div`
   gap: 2%;
 
   div {
-    width: 45%;
+    width: 30%;
     height: 50%;
     border: 2px solid whitesmoke;
     border-radius: 5px;
@@ -61,8 +61,26 @@ export const ListOfMovie = styled.div`
     justify-content: center;
     flex-direction: column;
     position: relative;
+
+    span {
+      font-size: 1.2rem;
+    }
   }
 `;
+
+export const TitleOfMovie = styled.h1`
+  margin-top: 20%;
+  font-size: 1.6rem;
+  color: whitesmoke;
+`
+
+export const ReviewOfMovie = styled.p`
+  width: 70%;
+  height: 30%;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  text-align: center;
+`
 
 export const BtnRemove = styled.button`
   position: absolute;
@@ -73,6 +91,7 @@ export const BtnRemove = styled.button`
   font-size: 1.2rem;
   border: none;
   background-color: transparent;
+  color: whitesmoke;
 `;
 
 export const BtnFavorite = styled.button`

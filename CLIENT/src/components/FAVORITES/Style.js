@@ -10,7 +10,7 @@ export const FavoritePage = styled.main`
 `;
 
 export const FavoriteContainer = styled.section`
-  width: 50%;
+  width: 80%;
   height: 90%;
   display: flex;
   justify-content: center;
@@ -41,7 +41,7 @@ export const TitleFavorite = styled.div`
 `;
 
 export const FavoriteItem = styled.div`
-  width: 45%;
+  width: 30%;
   height: 50%;
   border: 1px solid whitesmoke;
   display: flex;
@@ -49,17 +49,11 @@ export const FavoriteItem = styled.div`
   justify-content: center;
   flex-direction: column;
   position: relative;
+  border-radius: 5px;
 
-  svg {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    border: none;
-    background-color: transparent;
-  }
+  span {
+      font-size: 1.2rem;
+    }
 `;
 
 export const ListOfFavorite = styled.div`
@@ -72,3 +66,41 @@ export const ListOfFavorite = styled.div`
   justify-content: center;
   gap: 2%;
 `;
+
+export const TitleOfMovie = styled.h1`
+  font-size: 1.6rem;
+  color: whitesmoke;
+  margin-top: 20%;
+`
+
+export const ReviewOfMovie = styled.p`
+  width: 70%;
+  height: 30%;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  text-align: center;
+  text-align: center;
+`
+
+export const BtnRemove = styled.button`
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+  color: whitesmoke;
+`;
+
+export const BtnFavorite = styled.button`
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+`

@@ -9,16 +9,15 @@ import {
   BtnCrud,
   ListContainer,
   DivWatched,
+  TitleCrud,
   // Emoji,
 } from "./Style";
 import { NavLink } from "react-router-dom";
 import { BiMoviePlay } from "react-icons/bi";
 import { FaPlay } from "react-icons/fa";
-import {PiPopcornThin} from "react-icons/pi"
+import { PiPopcornThin } from "react-icons/pi";
 import { useQuery } from "react-query";
-// import axios from "axios"
-// import OldCamera from "../../assets/OldCamera.png"
-// import Glasses from "../../assets/Glasses.png"
+import { BsFillCameraReelsFill } from "react-icons/bs";
 
 function Crud() {
   const [movie, setMovie] = useState("");
@@ -27,7 +26,6 @@ function Crud() {
   const [favorite] = useState(0);
 
   const HandlePost = () => {
-
     if (movie && review && note != "")
       Axios.post("http://localhost:3010/movies", {
         movieName: movie,
@@ -40,11 +38,11 @@ function Crud() {
     setMovie("");
     setReview("");
     setNote(0);
-    refetch()
+    refetch();
   };
 
   const getData = async () => {
-    const response = await axios.get("http://localhost:3010/movies");
+    const response = await Axios.get("http://localhost:3010/movies");
     return response.data;
   };
 
@@ -70,10 +68,13 @@ function Crud() {
 
   return (
     <CrudPage>
-      {/* <img src={OldCamera} className="OldCamera"/>
-      <img src={Glasses} className="Glasses"/> */}
-       <CrudContainer>
-        <h1>Watched - Movies </h1>
+      <CrudContainer>
+        <TitleCrud>
+          <h1>Watched - Movies</h1>
+          <span>
+          <BsFillCameraReelsFill />
+          </span>
+        </TitleCrud>
         <DivName>
           <label htmlFor="movie">Movie name</label>
           <input
@@ -83,7 +84,6 @@ function Crud() {
             value={movie}
             onChange={({ target }) => setMovie(target.value)}
           />
-        
         </DivName>
         <DivReview>
           <label htmlFor="movie-review">Movie review</label>
@@ -103,6 +103,7 @@ function Crud() {
             min="0"
             max="100"
             step="10"
+            id="movie-note"
             value={note}
             onChange={({ target }) => setNote(target.value)}
           />
@@ -113,14 +114,13 @@ function Crud() {
         </BtnCrud>
       </CrudContainer>
       <ListContainer>
-       <PiPopcornThin   className="popcorn"/>
-        <h1>Lista de filmes</h1>
+        <PiPopcornThin className="popcorn" />
+        <h1>List of Movies</h1>
         <DivWatched>
           <NavLink to="/list">
             <FaPlay />
             See
           </NavLink>
-          
         </DivWatched>
         <h1>Movies : {data?.length}</h1>
       </ListContainer>
