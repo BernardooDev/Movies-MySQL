@@ -30,7 +30,7 @@ Open the config.js file and update the database settings, such as host name, use
 Open the terminal and navigate to the project's root folder.
 
 ## Run the following command to install the project dependencies:
-npm install
+npm install <br>
 node main.js
 
 
