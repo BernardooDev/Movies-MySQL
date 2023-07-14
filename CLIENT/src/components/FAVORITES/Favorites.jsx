@@ -39,7 +39,7 @@ const Favorites = () => {
                 <h1>{d.movieName}</h1>
                 <p>{d.movieReview}</p>
                 <p>Note: {d.movieNote}%</p>
-                <AiFillHeart style={{ color: "red" }}/>
+                <AiFillHeart style={{ color: "whitesmoke" }}/>
               </FavoriteItem>
             ))}
         </ListOfFavorite>

@@ -14,6 +14,11 @@ import {
 import { NavLink } from "react-router-dom";
 import { BiMoviePlay } from "react-icons/bi";
 import { FaPlay } from "react-icons/fa";
+import {PiPopcornThin} from "react-icons/pi"
+import { useQuery } from "react-query";
+// import axios from "axios"
+// import OldCamera from "../../assets/OldCamera.png"
+// import Glasses from "../../assets/Glasses.png"
 
 function Crud() {
   const [movie, setMovie] = useState("");
@@ -22,6 +27,7 @@ function Crud() {
   const [favorite] = useState(0);
 
   const HandlePost = () => {
+
     if (movie && review && note != "")
       Axios.post("http://localhost:3010/movies", {
         movieName: movie,
@@ -34,7 +40,15 @@ function Crud() {
     setMovie("");
     setReview("");
     setNote(0);
+    refetch()
   };
+
+  const getData = async () => {
+    const response = await axios.get("http://localhost:3010/movies");
+    return response.data;
+  };
+
+  const { data } = useQuery("movies", getData);
 
   const Emoji = ({ note }) => {
     let emoji = "";
@@ -56,8 +70,10 @@ function Crud() {
 
   return (
     <CrudPage>
-      <CrudContainer>
-        <h1>Watched - Movies</h1>
+      {/* <img src={OldCamera} className="OldCamera"/>
+      <img src={Glasses} className="Glasses"/> */}
+       <CrudContainer>
+        <h1>Watched - Movies </h1>
         <DivName>
           <label htmlFor="movie">Movie name</label>
           <input
@@ -67,6 +83,7 @@ function Crud() {
             value={movie}
             onChange={({ target }) => setMovie(target.value)}
           />
+        
         </DivName>
         <DivReview>
           <label htmlFor="movie-review">Movie review</label>
@@ -96,13 +113,16 @@ function Crud() {
         </BtnCrud>
       </CrudContainer>
       <ListContainer>
+       <PiPopcornThin   className="popcorn"/>
         <h1>Lista de filmes</h1>
         <DivWatched>
           <NavLink to="/list">
             <FaPlay />
             See
           </NavLink>
+          
         </DivWatched>
+        <h1>Movies : {data?.length}</h1>
       </ListContainer>
     </CrudPage>
   );

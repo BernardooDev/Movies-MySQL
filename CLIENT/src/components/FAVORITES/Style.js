@@ -6,7 +6,7 @@ export const FavoritePage = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #16122A
+  background-color: #16122a;
 `;
 
 export const FavoriteContainer = styled.section`
@@ -38,24 +38,29 @@ export const TitleFavorite = styled.div`
     font-size: 2rem;
     color: whitesmoke;
   }
-
 `;
 
 export const FavoriteItem = styled.div`
-    width: 45%;
-    height: 50%;
-    border: 1px solid whitesmoke;
+  width: 45%;
+  height: 50%;
+  border: 1px solid whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 5%;
+    left: 5%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-
-    svg {
-        position: absolute;
-        top: 10%;
-    }
-`
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+  }
+`;
 
 export const ListOfFavorite = styled.div`
   width: 100%;

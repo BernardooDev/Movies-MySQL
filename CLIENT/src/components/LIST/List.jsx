@@ -54,7 +54,7 @@ function List() {
           <NavLink to="/">
             <AiFillBackward></AiFillBackward>
           </NavLink>
-          <h1>Lista de Filmes</h1>
+          <h1>List of Movies</h1>
           <NavLink to="/favorites">
             <AiFillHeart />
           </NavLink>
@@ -73,7 +73,7 @@ function List() {
                 onClick={() => handleFavorite(d.idmovies)}
               >
                 {d.favorites == 1 ? (
-                  <AiFillHeart style={{ color: "red" }} />
+                  <AiFillHeart style={{ color: "whitesmoke" }} />
                 ) : (
                   <AiOutlineHeart />
                 )}

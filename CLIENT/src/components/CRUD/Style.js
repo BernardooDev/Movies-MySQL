@@ -6,7 +6,27 @@ export const CrudPage = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #16122A
+  background-color: #16122A;
+  position: relative;
+  overflow: hidden;
+
+  .OldCamera {
+    width: 20%;
+    height: 35%;
+    position: absolute;
+    bottom: 0%;
+    left: -2%;
+    transform: rotate(330deg);
+  }
+
+  .Glasses {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 0;
+    right: -2%;
+    transform: rotate(40deg);
+  }
 `;
 
 export const CrudContainer = styled.div`
@@ -17,7 +37,9 @@ export const CrudContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-
+  position: relative;
+  z-index: 100000;
+  overflow: hidden;
 
   h1 {
     color: whitesmoke;
@@ -36,6 +58,12 @@ export const ListContainer = styled.div`
    
   h1 {
     color: whitesmoke;
+  }
+  
+  .popcorn {
+    color: whitesmoke;
+    width: 50%;
+    height: 20%;
   }
 
 `
