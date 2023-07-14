@@ -176,9 +176,5 @@ export const DivWatched = styled.div`
     height: 100%;
     border-radius: 20px;
     color: whitesmoke;
-
-    &:active {
-      color: blue; 
-    }
   }
 `

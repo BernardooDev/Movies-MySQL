@@ -17,7 +17,6 @@ import { BiMoviePlay } from "react-icons/bi";
 import { FaPlay } from "react-icons/fa";
 import { PiPopcornThin } from "react-icons/pi";
 import { useQuery } from "react-query";
-import { BsFillCameraReelsFill } from "react-icons/bs";
 
 function Crud() {
   const [movie, setMovie] = useState("");
@@ -38,15 +37,15 @@ function Crud() {
     setMovie("");
     setReview("");
     setNote(0);
-    refetch();
-  };
+    refetch()
+  }
 
   const getData = async () => {
     const response = await Axios.get("http://localhost:3010/movies");
     return response.data;
   };
 
-  const { data } = useQuery("movies", getData);
+  const { data, refetch } = useQuery("movies", getData);
 
   const Emoji = ({ note }) => {
     let emoji = "";
@@ -71,9 +70,6 @@ function Crud() {
       <CrudContainer>
         <TitleCrud>
           <h1>Watched - Movies</h1>
-          <span>
-          <BsFillCameraReelsFill />
-          </span>
         </TitleCrud>
         <DivName>
           <label htmlFor="movie">Movie name</label>

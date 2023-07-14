@@ -27,7 +27,7 @@ function List() {
     return response.data;
   };
 
-  const { data, isLoading, refetch } = useQuery("movies", getData);
+  const { data, refetch } = useQuery("movies", getData);
 
   const handleFavorite = async (id) => {
     const movie = data.find((d) => d.idmovies === id);
@@ -36,11 +36,10 @@ function List() {
     } else if (movie.favorites === 1) {
       movie.favorites = 0;
     }
-
     await axios.put(`http://localhost:3010/movies/${id}`, {
       favorites: movie.favorites,
+   
     });
-
     refetch();
   };
 
@@ -92,7 +91,7 @@ function List() {
                 value={d.favorites}
                 onClick={() => handleFavorite(d.idmovies)}
               >
-                {d.favorites == 1 ? (
+                {d.favorites === 1 ? (
                   <AiFillHeart style={{ color: "whitesmoke" }} />
                 ) : (
                   <AiOutlineHeart />
